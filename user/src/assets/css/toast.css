@@ -1,0 +1,20 @@
+.ct-toast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: #000;
+    border-radius: 4px;
+    margin: 0 0 50px 0 !important;
+    opacity: 1;
+    transition: 0.3s all ease-in-out;
+    min-height: 45px;
+    pointer-events: all;
+}
+.ct-text {
+    font-weight: 500;
+    font-family: 'Roboto Condensed', sans-serif !important;
+    font-size: 18px !important;
+}

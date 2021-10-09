@@ -1,0 +1,28 @@
+.nav-logo{
+    width: 100px;
+    height: 30px;
+}
+.cart-btn{
+    padding: 5px 15px 5px 15px;
+    color: #FAFDFB;
+    border-radius: 20px !important;
+    border:0.5px solid #E43023;
+    background: #E43023 !important;
+}
+.search-autocomplete{
+    z-index: 10000;
+    height: 100px;
+    background-color: white;
+}
+.nav-round-btn{
+    background-color: white;
+    color: #000000;
+
+    border-radius: 54% !important;
+    box-shadow: 0 0 4px 0 rgba(57, 78, 234, 0.1)
+}
+.nav-round-btn:hover{
+    background-color: white;
+    border-radius: 52% !important;
+    box-shadow: 0 0 12px 0 rgba(57, 78, 234, 0.1)
+}
