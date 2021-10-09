@@ -8,10 +8,11 @@
     <title>Express | Admin</title>
 </head>
 <body>
-<noscript>You need to enable JavaScript to run this app.</noscript>
-<div id="root"></div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div id="root"></div>
 
 
-<script src="{{asset('js/app.js')}}"></script>
+    <script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>
