@@ -12,6 +12,8 @@ import NotificationPage from "../pages/NotificationPage";
 import FavouritePage from "../pages/FavouritePage";
 import CartPage from "../pages/CartPage";
 import OrderPage from "../pages/OrderPage";
+import ProductListByCategoryPage from "../pages/ProductListByCategoryPage";
+import ProductListBySubCategoryPage from "../pages/ProductListBySubCategoryPage";
 
 class AppRoute extends Component {
     render() {
@@ -26,13 +28,16 @@ class AppRoute extends Component {
                     <Route exact path="/refund" component={RefundPage}/>
                     <Route exact path="/about" component={AboutPage}/>
 
-
                     <Route exact path="/productDetails" component={ProductDetailsPage}/>
 
                     <Route exact path="/notification" component={NotificationPage}/>
                     <Route exact path="/favourite" component={FavouritePage}/>
                     <Route exact path="/cartList" component={CartPage}/>
                     <Route exact path="/order" component={OrderPage}/>
+
+                    <Route exact path="/ProductListByCategory/:Category" component={ProductListByCategoryPage}/>
+                    <Route exact path="/ProductListBySubCategory/:Category/:SubCategory" component={ProductListBySubCategoryPage}/>
+
 
                 </Switch>
             </Fragment>

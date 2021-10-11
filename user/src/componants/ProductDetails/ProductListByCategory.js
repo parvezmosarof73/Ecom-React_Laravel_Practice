@@ -1,31 +1,15 @@
 import React, {Component, Fragment} from 'react';
-import {Container,Row,Col,Card} from "react-bootstrap";
+import {Card, Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import axios from "axios";
-import ApiURL from "../../api/ApiURL";
 
 
-class FeaturedProducts extends Component {
 
-    constructor(){
-        super();
-        this.state={
-            ProductData:[],
-        }
-    }
-
-    componentDidMount() {
-        axios.get(ApiURL.ProductListByRemark('FEATURED')).then((response)=> {
-            this.setState({ProductData:response.data});
-        }).catch(function (error) {
-
-        });
-    }
+class ProductListByCategory extends Component {
 
     render() {
 
-        const MyList=this.state.ProductData;
-
+        const Category = this.props.Category;
+        const MyList=this.props.ProductData;
         const MyView=MyList.map((ProductList, i)=>{
 
             if (ProductList.special_price=="NO") {
@@ -55,17 +39,14 @@ class FeaturedProducts extends Component {
                         </Card>
                     </Link>
                 </Col>
-
             }
-
         });
 
 
         return (
             <Fragment>
-                <Container fluid={true} className="text-center">
-                    <h5 className="section-title mt-3">Featured Product</h5>
-                    <p className="section-sub-title pb-3">Lorem ipsum dolor sit amet, cLorem ipsum dolor sit amet, c</p>
+                <Container fluid={true} className="text-center TopSection">
+                    <h5 className="section-title mt-5">{Category}</h5>
                     <Row>
                         {MyView}
                     </Row>
@@ -75,4 +56,4 @@ class FeaturedProducts extends Component {
     }
 }
 
-export default FeaturedProducts;
+export default ProductListByCategory;

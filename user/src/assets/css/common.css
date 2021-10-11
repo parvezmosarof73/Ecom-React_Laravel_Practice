@@ -26,7 +26,7 @@ body {
 }
 
 .TopSection{
-    margin-top: 70px;
+    margin-top: 80px;
 }
 
 .Link{
@@ -46,3 +46,4 @@ a{
 a:hover{
     text-decoration: none !important;
 }
+

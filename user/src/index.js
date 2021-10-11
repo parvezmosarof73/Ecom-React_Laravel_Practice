@@ -5,6 +5,7 @@ import App from './App';
 import '../src/assets/css/style.css';
 import '../src/assets/css/fontawesome.css';
 import '../src/assets/css/animate.min.css';
+import '../src/assets/css/placeholder-loading.min.css';
 
 import reportWebVitals from './reportWebVitals';
 

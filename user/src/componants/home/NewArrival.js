@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import {Col, Container, Row, Card} from "react-bootstrap";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import axios from "axios";
+import ApiURL from "../../api/ApiURL";
 
 
 class NewArrival extends Component {
@@ -11,7 +13,19 @@ class NewArrival extends Component {
         super(props);
         this.next=this.next.bind(this);
         this.previous=this.previous.bind(this);
+        this.state={
+            ProductData:[],
+        }
     }
+
+    componentDidMount() {
+        axios.get(ApiURL.ProductListByRemark('NEW')).then((response)=> {
+            this.setState({ProductData:response.data});
+        }).catch(function (error) {
+
+        });
+    }
+
 
     next(){
         this.slider.slickNext();
@@ -23,11 +37,10 @@ class NewArrival extends Component {
 
 
     render() {
-
         const settings = {
             dots: false,
             infinite: true,
-            speed: 1000,
+            speed: 800,
             autoplaySpeed:3000,
             autoplay:true,
             slidesToShow: 4,
@@ -59,6 +72,34 @@ class NewArrival extends Component {
             ]
         };
 
+        const MyList=this.state.ProductData;
+        const MyView=MyList.map((ProductList, i)=>{
+            if (ProductList.special_price=="NO") {
+                return  <div className="p-2">
+                    <Card className="image-box w-100 card mb-3">
+                        <img src={ProductList.image}/>
+                        <Card.Body>
+                            <p className="product-name-on-card">{ProductList.title}</p>
+                            <p className="product-price-on-card">Price : {ProductList.price} TK</p>
+                        </Card.Body>
+                    </Card>
+                </div>
+            }else {
+                return  <div className="p-2">
+                    <Card className="image-box w-100 card mb-3">
+                        <img src={ProductList.image}/>
+                        <Card.Body>
+                            <p className="product-name-on-card">{ProductList.title}</p>
+                            <p className="product-price-on-card">
+                                Price : <strike class="text-secondary">{ProductList.price}</strike> {ProductList.special_price} TK
+                            </p>
+                        </Card.Body>
+                    </Card>
+                </div>
+
+            }
+        });
+
         return (
             <Fragment>
                 <Container fluid={true} className="text-center BetweenTwoSection">
@@ -73,78 +114,7 @@ class NewArrival extends Component {
                     <p className="section-sub-title pb-3">Lorem ipsum dolor sit amet, cLorem ipsum dolor sit amet, c</p>
                         <div>
                             <Slider ref={c=>(this.slider=c)} {...settings}>
-                                <div>
-                                    <Card className="image-box card mb-3">
-                                        <img src="https://static-01.daraz.com.bd/p/66ec675d545eeabf8eb04415318d3db5.jpg_400x400q75-product.jpg"/>
-                                        <Card.Body>
-                                            <p className="product-name-on-card">Asus Lorem ipsum dolor sit amet. sint!</p>
-                                            <p className="product-price-on-card">Price : 30000 tk</p>
-                                        </Card.Body>
-                                    </Card>
-                                </div>
-                                <div>
-                                    <Card className="image-box card mb-3">
-                                        <img src="https://static-01.daraz.com.bd/p/66ec675d545eeabf8eb04415318d3db5.jpg_400x400q75-product.jpg"/>
-                                        <Card.Body>
-                                            <p className="product-name-on-card">Asus Lorem ipsum dolor sit amet. sint!</p>
-                                            <p className="product-price-on-card">Price : 30000 tk</p>
-                                        </Card.Body>
-                                    </Card>
-                                </div>
-                                <div>
-                                    <Card className="image-box card mb-3">
-                                        <img src="https://static-01.daraz.com.bd/p/66ec675d545eeabf8eb04415318d3db5.jpg_400x400q75-product.jpg"/>
-                                        <Card.Body>
-                                            <p className="product-name-on-card">Asus Lorem ipsum dolor sit amet. sint!</p>
-                                            <p className="product-price-on-card">Price : 30000 tk</p>
-                                        </Card.Body>
-                                    </Card>
-                                </div>
-                                <div>
-                                    <Card className="image-box card mb-3">
-                                        <img src="https://static-01.daraz.com.bd/p/66ec675d545eeabf8eb04415318d3db5.jpg_400x400q75-product.jpg"/>
-                                        <Card.Body>
-                                            <p className="product-name-on-card">Asus Lorem ipsum dolor sit amet. sint!</p>
-                                            <p className="product-price-on-card">Price : 30000 tk</p>
-                                        </Card.Body>
-                                    </Card>
-                                </div>
-                                <div>
-                                    <Card className="image-box card mb-3">
-                                        <img src="https://static-01.daraz.com.bd/p/66ec675d545eeabf8eb04415318d3db5.jpg_400x400q75-product.jpg"/>
-                                        <Card.Body>
-                                            <p className="product-name-on-card">Asus Lorem ipsum dolor sit amet. sint!</p>
-                                            <p className="product-price-on-card">Price : 30000 tk</p>
-                                        </Card.Body>
-                                    </Card>
-                                </div>
-                                <div>
-                                    <Card className="image-box card mb-3">
-                                        <img src="https://static-01.daraz.com.bd/p/66ec675d545eeabf8eb04415318d3db5.jpg_400x400q75-product.jpg"/>
-                                        <Card.Body>
-                                            <p className="product-name-on-card">Asus Lorem ipsum dolor sit amet. sint!</p>
-                                            <p className="product-price-on-card">Price : 30000 tk</p>
-                                        </Card.Body>
-                                    </Card>
-                                </div>
-                                <div>
-                                    <Card className="image-box card mb-3">
-                                        <img src="https://static-01.daraz.com.bd/p/66ec675d545eeabf8eb04415318d3db5.jpg_400x400q75-product.jpg"/>
-                                        <Card.Body>
-                                            <p className="product-name-on-card">Asus Lorem ipsum dolor sit amet. sint!</p>
-                                            <p className="product-price-on-card">Price : 30000 tk</p>
-                                        </Card.Body>
-                                    </Card>
-                                </div>
-                                <div>
-                                    <Card className="image-box card mb-3">
-                                        <img src="https://static-01.daraz.com.bd/p/66ec675d545eeabf8eb04415318d3db5.jpg_400x400q75-product.jpg"/>
-                                        <Card.Body>
-                                            <p className="product-name-on-card">Asus Lorem ipsum dolor sit amet. sint!</p>
-                                            <p className="product-price-on-card">Price : 30000 tk</p>
-                                        </Card.Body>
-                                    </Card>
-                                </div>
+                                {MyView}
                             </Slider>
                         </div>
                 </Container>

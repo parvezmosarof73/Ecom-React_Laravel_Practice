@@ -9,12 +9,23 @@ import NavMenuMobile from "../componants/common/NavMenuMobile";
 import HomeTopMobile from "../componants/home/HomeTopMobile";
 import FooterDesktop from "../componants/common/FooterDesktop";
 import FooterMobile from "../componants/common/FooterMobile";
+import axios from 'axios';
+import ApiURL from '../api/ApiURL';
 
 class HomePage extends Component {
 
     componentDidMount() {
         window.scroll(0,0)
+        this.GetVisitorDetails();
+
     }
+
+    GetVisitorDetails=()=>{
+        axios.get(ApiURL.VisitorDetails).then().catch()
+
+    }
+
+
     render() {
         return (
             <Fragment>
@@ -34,6 +45,7 @@ class HomePage extends Component {
                 <FeaturedProducts/>
                 <Collection/>
                 <Categories/>
+
 
                 <div className="Mobile">
                     <FooterMobile/>
