@@ -19,6 +19,13 @@ class ApiURL{
         return this.BaseURL+"ProductListBySubCategory/"+Category+"/"+SubCategory;
     }
 
+    static SendSliderInfo=this.BaseURL+"SendSliderInfo";
+
+    static ProductDetails(ProductCode){
+        return this.BaseURL+"ProductDetails/"+ProductCode;
+    }
+
+
 
 
 

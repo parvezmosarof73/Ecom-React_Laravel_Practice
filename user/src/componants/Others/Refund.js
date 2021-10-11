@@ -27,7 +27,7 @@ class Refund extends Component {
         if (SiteInfoTerms==null) {
             axios.get(ApiURL.SendSiteInfo).then(response=> {
                 let  StatusCode=response.status;
-                if (StatusCode==200){
+                if (StatusCode===200){
                     let JSONData= (response.data)[0]['terms'];
                     this.setState({terms:JSONData,loaderDiv:"d-none",mainDiv:""});
                     sessionStorage.setItem("SiteInfoTerms",JSONData);

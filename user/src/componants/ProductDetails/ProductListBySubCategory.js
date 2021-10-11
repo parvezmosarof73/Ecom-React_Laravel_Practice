@@ -13,8 +13,8 @@ class ProductListBySubCategory extends Component {
 
             if (ProductList.special_price=="NO") {
                 return <Col className="p-1" key={1} xl={2} lg={2} md={2} sm={4} xs={6}>
-                    <Link to="/productDetails">
-                        <Card className="image-box w-100 h-100 card mb-3">
+                    <Link to={"/ProductDetails/"+ProductList.product_code }>
+                    <Card className="image-box w-100 h-100 card mb-3">
                             <img src={ProductList.image}/>
                             <Card.Body>
                                 <p className="product-name-on-card">{ProductList.title}</p>
@@ -26,8 +26,8 @@ class ProductListBySubCategory extends Component {
 
             }else {
                 return <Col className="p-1" key={1} xl={2} lg={2} md={2} sm={4} xs={6}>
-                    <Link to="/productDetails">
-                        <Card className="image-box w-100 h-100 card mb-3">
+                    <Link to={"/ProductDetails/"+ProductList.product_code }>
+                    <Card className="image-box w-100 h-100 card mb-3">
                             <img src={ProductList.image}/>
                             <Card.Body>
                                 <p className="product-name-on-card">{ProductList.title}</p>

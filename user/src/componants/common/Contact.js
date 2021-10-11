@@ -45,10 +45,10 @@ class Contact extends Component {
         let sendBtn=document.getElementById('sendBtn');
         let contactForm=document.getElementById('contactForm');
 
-        if(name.length==0){
+        if(name.length===0){
             toast.warn("Name Required");
         }
-        else if(mobile.length==0){
+        else if(mobile.length===0){
             toast.warn("Mobile Number Required");
         }
         else if(!(Validation.NameRegx).test(name)){
@@ -57,7 +57,7 @@ class Contact extends Component {
         else if(!(Validation.MobileRegx).test(mobile)){
             toast.error("Please enter valid mobile number");
         }
-        else if(message.length==0){
+        else if(message.length===0){
             toast.warn("Please type your message");
         }
         else{
@@ -68,7 +68,7 @@ class Contact extends Component {
             MyFormData.append("message",message);
 
             axios.post(ApiURL.PostContactDetails,MyFormData).then(function (response) {
-                if (response.status==200 && response.data==1) {
+                if (response.status===200 && response.data===1) {
                     toast.success("Request Successful !");
                     sendBtn.innerHTML="Send";
                     contactForm.reset();

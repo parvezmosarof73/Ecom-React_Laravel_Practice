@@ -1,5 +1,6 @@
 import React, {Component,Fragment} from 'react';
 import Slider from "react-slick";
+import {Link} from "react-router-dom";
 
 class SliderHome extends Component {
     render() {
@@ -14,19 +15,34 @@ class SliderHome extends Component {
             slidesToScroll: 1
         };
 
+        const SliderList=this.props.data;
+
+        const SliderView= SliderList.map((SliderList,i)=>{
+            return <div className="container-fluid m-0 p-0 overflow-hidden w-100 shadow-sm">
+                <div style={{backgroundColor:SliderList.bg_color}}>
+                    <div className="m-0 p-0 text-center">
+                        <div className="row card-body">
+                            <div className="col-md-6 slider-title-div animated slideInDown">
+                                <h1 style={{color:SliderList.text_color}} className="slider-title">{SliderList.title}</h1>
+                                <p style={{color:SliderList.text_color}} className="slider-sub-title">{SliderList.sub_title}</p>
+                                <Link to={"ProductDetails/"+SliderList.product_code } className="btn site-btn px-5">More Info</Link>
+                            </div>
+                            <div className="col-md-6 animated slideInDown">
+                                <img className="slider-img" src={SliderList.image} alt="slider img"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        });
+
+
 
         return (
             <Fragment>
                   <Slider {...settings}>
-                      <div>
-                          <img className="w-100" src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1a.H.PRr0gK0jSZFnXXbRRXXa.jpg_2200x2200Q100.jpg"/>
-                      </div>
-                      <div>
-                          <img className="w-100" src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1JpZXPRr0gK0jSZFnXXbRRXXa.jpg_2200x2200Q100.jpg"/>
-                      </div>
-                      <div>
-                          <img className="w-100" src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1Jw4idMgP7K4jSZFqXXamhVXa.jpg_1200x1200.jpg"/>
-                      </div>
+                      {SliderView}
                   </Slider>
             </Fragment>
         );

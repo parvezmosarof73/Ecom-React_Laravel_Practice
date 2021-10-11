@@ -1,7 +1,6 @@
 import React, {Component,Fragment} from 'react';
-import {Button, Col, Container, Navbar, Row} from "react-bootstrap";
-import MegaMenu from "../home/MegaMenu";
-import MegaMenuMobile from "../home/MegaMenuMobile";
+import { Navbar} from "react-bootstrap";
+import MegaMenuMobile from "../Home/MegaMenuMobile";
 import {Link} from "react-router-dom";
 
 class NavMenuMobile extends Component {
@@ -17,11 +16,11 @@ class NavMenuMobile extends Component {
 
     MenuBarClickHandler=()=>{
         this.SideNavOpenClose();
-    }
+    };
 
     ContentOverlayClickHandler=()=>{
         this.SideNavOpenClose();
-    }
+    };
 
 
 
@@ -34,7 +33,7 @@ class NavMenuMobile extends Component {
         else{
             this.setState({SideNavState:"sideNavOpen",ContentOverState:"ContentOverlayOpen"})
         }
-    }
+    };
 
 
 

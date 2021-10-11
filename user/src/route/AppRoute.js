@@ -28,8 +28,6 @@ class AppRoute extends Component {
                     <Route exact path="/refund" component={RefundPage}/>
                     <Route exact path="/about" component={AboutPage}/>
 
-                    <Route exact path="/productDetails" component={ProductDetailsPage}/>
-
                     <Route exact path="/notification" component={NotificationPage}/>
                     <Route exact path="/favourite" component={FavouritePage}/>
                     <Route exact path="/cartList" component={CartPage}/>
@@ -37,6 +35,8 @@ class AppRoute extends Component {
 
                     <Route exact path="/ProductListByCategory/:Category" component={ProductListByCategoryPage}/>
                     <Route exact path="/ProductListBySubCategory/:Category/:SubCategory" component={ProductListBySubCategoryPage}/>
+
+                    <Route exact path="/productDetails/:code" component={ProductDetailsPage}/>
 
 
                 </Switch>

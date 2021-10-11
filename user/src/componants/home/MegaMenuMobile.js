@@ -13,13 +13,13 @@ class MegaMenuMobile extends Component {
     }
 
     MegaMenu(){
-        var accordion= document.getElementsByClassName("accordionMobile");
-        var accordionNumber= accordion.length;
-        var i;
+        let accordion= document.getElementsByClassName("accordionMobile");
+        let accordionNumber= accordion.length;
+        let i;
         for (i=0; i<accordionNumber; i++){
             accordion[i].addEventListener("click", function () {
                 this.classList.toggle("active");
-                var panel=this.nextElementSibling;
+                let panel=this.nextElementSibling;
 
                 if (panel.style.maxHeight) {
                     panel.style.maxHeight=null;

@@ -1,14 +1,14 @@
 import React, {Component, Fragment} from 'react';
-import FeaturedProducts from "../componants/home/FeaturedProducts";
-import Categories from "../componants/home/Categories";
-import Collection from "../componants/home/Collection";
-import NewArrival from "../componants/home/NewArrival";
-import HomeTop from "../componants/home/HomeTop";
-import NavMenuDesktop from "../componants/common/NavMenuDesktop";
-import NavMenuMobile from "../componants/common/NavMenuMobile";
-import HomeTopMobile from "../componants/home/HomeTopMobile";
-import FooterDesktop from "../componants/common/FooterDesktop";
-import FooterMobile from "../componants/common/FooterMobile";
+import FeaturedProducts from "../componants/Home/FeaturedProducts";
+import Categories from "../componants/Home/Categories";
+import Collection from "../componants/Home/Collection";
+import NewArrival from "../componants/Home/NewArrival";
+import HomeTop from "../componants/Home/HomeTop";
+import NavMenuDesktop from "../componants/Common/NavMenuDesktop";
+import NavMenuMobile from "../componants/Common/NavMenuMobile";
+import HomeTopMobile from "../componants/Home/HomeTopMobile";
+import FooterDesktop from "../componants/Common/FooterDesktop";
+import FooterMobile from "../componants/Common/FooterMobile";
 import axios from 'axios';
 import ApiURL from '../api/ApiURL';
 

@@ -1,10 +1,11 @@
 import React, {Component, Fragment} from 'react';
 import Slider from "react-slick";
-import {Col, Container, Row, Card} from "react-bootstrap";
+import {Container, Card, Col} from "react-bootstrap";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import axios from "axios";
 import ApiURL from "../../api/ApiURL";
+import {Link} from "react-router-dom";
 
 
 class NewArrival extends Component {
@@ -73,28 +74,32 @@ class NewArrival extends Component {
         };
 
         const MyList=this.state.ProductData;
-        const MyView=MyList.map((ProductList, i)=>{
-            if (ProductList.special_price=="NO") {
+        const MyView=MyList.map((ProductList,i)=>{
+            if (ProductList.special_price==="NO") {
                 return  <div className="p-2">
-                    <Card className="image-box w-100 card mb-3">
-                        <img src={ProductList.image}/>
-                        <Card.Body>
-                            <p className="product-name-on-card">{ProductList.title}</p>
-                            <p className="product-price-on-card">Price : {ProductList.price} TK</p>
-                        </Card.Body>
-                    </Card>
+                    <Link to={"ProductDetails/"+ProductList.product_code }>
+                        <Card className="image-box w-100 card mb-3">
+                            <img src={ProductList.image}/>
+                            <Card.Body>
+                                <p className="product-name-on-card">{ProductList.title}</p>
+                                <p className="product-price-on-card">Price : {ProductList.price} TK</p>
+                            </Card.Body>
+                        </Card>
+                    </Link>
                 </div>
             }else {
                 return  <div className="p-2">
-                    <Card className="image-box w-100 card mb-3">
-                        <img src={ProductList.image}/>
-                        <Card.Body>
-                            <p className="product-name-on-card">{ProductList.title}</p>
-                            <p className="product-price-on-card">
-                                Price : <strike class="text-secondary">{ProductList.price}</strike> {ProductList.special_price} TK
-                            </p>
-                        </Card.Body>
-                    </Card>
+                    <Link to={"ProductDetails/"+ProductList.product_code }>
+                        <Card className="image-box w-100 card mb-3">
+                            <img src={ProductList.image}/>
+                            <Card.Body>
+                                <p className="product-name-on-card">{ProductList.title}</p>
+                                <p className="product-price-on-card">
+                                    Price : <strike class="text-secondary">{ProductList.price}</strike> {ProductList.special_price} TK
+                                </p>
+                            </Card.Body>
+                        </Card>
+                    </Link>
                 </div>
 
             }

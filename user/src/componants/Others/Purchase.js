@@ -25,8 +25,8 @@ class Purchase extends Component {
 
         if (SiteInfo_purchase_guide==null) {
             axios.get(ApiURL.SendSiteInfo).then(response=> {
-                let  StatusCode=response.status;
-                if (StatusCode==200){
+                let  StatusCode = response.status;
+                if ( StatusCode === 200 ){
                     let JSONData= (response.data)[0]['purchase_guide'];
                     this.setState({about:JSONData,loaderDiv:"d-none",mainDiv:""});
                     sessionStorage.setItem("SiteInfo_purchase_guide",JSONData);

@@ -2,7 +2,20 @@ import React, {Component, Fragment} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
 
 class ProductDetails extends Component {
+
+
     render() {
+
+        let ProductData = this.props.ProductData;
+        let title = ProductData['ProductList'][0]['title'];
+        let image = ProductData['ProductList'][0]['image'];
+        let img1 = ProductData['ProductDetails'][0]['img1'];
+        let img2 = ProductData['ProductDetails'][0]['img2'];
+        let img3 = ProductData['ProductDetails'][0]['img3'];
+        let img4 = ProductData['ProductDetails'][0]['img4'];
+
+
+
         return (
             <Fragment>
                 <Container  className="BetweenTwoSection">
@@ -10,26 +23,26 @@ class ProductDetails extends Component {
                         <Col className="shadow-sm bg-white pb-3 mt-5" md={12} lg={12} sm={12} xs={12}>
                             <Row>
                                 <Col className="p-3" md={6} lg={6} sm={12} xs={12}>
-                                    <img className="w-100" src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1Jw4idMgP7K4jSZFqXXamhVXa.jpg_1200x1200.jpg"/>
+                                    <img className="w-100" src={image}/>
                                     <Container  className="my-3">
                                         <Row>
                                             <Col className="p-0 m-0"  md={3} lg={3} sm={3} xs={3}>
-                                                <img className="w-100" src="https://static-01.daraz.com.bd/p/66ec675d545eeabf8eb04415318d3db5.jpg_400x400q75-product.jpg"/>
+                                                <img className="w-100" src={img1}/>
                                             </Col>
                                             <Col className="p-0 m-0" md={3} lg={3} sm={3} xs={3}>
-                                                <img className="w-100" src="https://static-01.daraz.com.bd/p/66ec675d545eeabf8eb04415318d3db5.jpg_400x400q75-product.jpg"/>
+                                                <img className="w-100" src={img2}/>
                                             </Col>
                                             <Col className="p-0 m-0" md={3} lg={3} sm={3} xs={3}>
-                                                <img className="w-100" src="https://static-01.daraz.com.bd/p/66ec675d545eeabf8eb04415318d3db5.jpg_400x400q75-product.jpg"/>
+                                                <img className="w-100" src={img3}/>
                                             </Col>
                                             <Col className="p-0 m-0" md={3} lg={3} sm={3} xs={3}>
-                                                <img className="w-100" src="https://static-01.daraz.com.bd/p/66ec675d545eeabf8eb04415318d3db5.jpg_400x400q75-product.jpg"/>
+                                                <img className="w-100" src={img4}/>
                                             </Col>
                                         </Row>
                                     </Container>
                                 </Col>
                                 <Col className="p-3 " md={6} lg={6} sm={12} xs={12}>
-                                    <h5 className="Product-Name">ASUS TUF A15 FA506IU Ryzen 7 4800H GTX</h5>
+                                    <h5 className="Product-Name"></h5>
                                     <h6 className="section-sub-title">Some Of Our Exclusive Collection, You May Like Some Of Our Exclusive Collectio</h6>
                                     <div className="input-group">
                                         <div className="Product-price-card d-inline ">Reguler Price 200</div>

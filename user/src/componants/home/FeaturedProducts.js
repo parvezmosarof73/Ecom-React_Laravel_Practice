@@ -26,11 +26,11 @@ class FeaturedProducts extends Component {
 
         const MyList=this.state.ProductData;
 
-        const MyView=MyList.map((ProductList, i)=>{
+        const MyView=MyList.map((ProductList,i)=>{
 
-            if (ProductList.special_price=="NO") {
+            if (ProductList.special_price==="NO") {
                 return <Col className="p-1" key={1} xl={2} lg={2} md={2} sm={4} xs={6}>
-                    <Link to="/productDetails">
+                    <Link to={"ProductDetails/"+ProductList.product_code }>
                         <Card className="image-box w-100 h-100 card mb-3">
                             <img src={ProductList.image}/>
                             <Card.Body>
@@ -43,7 +43,7 @@ class FeaturedProducts extends Component {
 
             }else {
                 return <Col className="p-1" key={1} xl={2} lg={2} md={2} sm={4} xs={6}>
-                    <Link to="/productDetails">
+                    <Link to={"ProductDetails/"+ProductList.product_code }>
                         <Card className="image-box w-100 h-100 card mb-3">
                             <img src={ProductList.image}/>
                             <Card.Body>

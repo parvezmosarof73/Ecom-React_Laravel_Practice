@@ -26,7 +26,7 @@ class Policy extends Component {
         if (SiteInfoPolicy==null) {
             axios.get(ApiURL.SendSiteInfo).then(response=> {
                 let  StatusCode=response.status;
-                if (StatusCode==200){
+                if (StatusCode===200){
                     let JSONData= (response.data)[0]['policy'];
                     this.setState({policy:JSONData,loaderDiv:"d-none",mainDiv:""});
                     sessionStorage.setItem("SiteInfoPolicy",JSONData);

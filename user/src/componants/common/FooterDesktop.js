@@ -37,7 +37,7 @@ class FooterDesktop extends Component {
         if (SiteInfoFooter==null) {
             axios.get(ApiURL.SendSiteInfo).then(response=> {
                 let  StatusCode=response.status;
-                if (StatusCode==200){
+                if (StatusCode===200){
                     let JSONData= (response.data)[0];
                     this.setState({
                         androidLink:JSONData['android_app_link'],
@@ -61,7 +61,7 @@ class FooterDesktop extends Component {
 
             })
         }else {
-            let footerDataJSON=JSON.parse(SiteInfoFooter)
+            let footerDataJSON=JSON.parse(SiteInfoFooter);
             this.setState({
                 footerData:SiteInfoFooter,
                 androidLink:footerDataJSON['android_app_link'],

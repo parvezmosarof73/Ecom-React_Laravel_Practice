@@ -12,17 +12,28 @@ class HomeTop extends Component {
         super();
         this.state={
             MenuData:[],
+            SliderData:[],
         }
     }
 
     componentDidMount() {
-            axios.get(ApiURL.SendCategoryDetails).then(response=> {
-                this.setState({MenuData:response.data});
+        window.scroll(0,0);
 
-            }).catch(error=> {
-                toast.error("Something Went Wrong ! Please Try Again.");
+        axios.get(ApiURL.SendCategoryDetails).then(response=> {
+            this.setState({MenuData:response.data});
 
-            })
+        }).catch(error=> {
+            toast.error("Something Went Wrong ! Please Try Again.");
+
+        });
+
+        axios.get(ApiURL.SendSliderInfo).then(response=> {
+            this.setState({SliderData:response.data});
+
+        }).catch(error=> {
+            toast.error("Something Went Wrong ! Please Try Again.");
+
+        });
 
     }
 
@@ -34,12 +45,12 @@ class HomeTop extends Component {
             <Fragment>
                 <Container fluid={true} className="p-0 mt-5 overflow-hidden">
                     <Row className="mt-4">
-                        <Col xl={3} lg={3} md={3} sm={3}>
+                        <Col xl={3} lg={3} md={3}>
                             <MegaMenu data={this.state.MenuData}/>
                         </Col>
 
-                        <Col xl={9} lg={9} md={9} sm={9}>
-                            <SliderHome/>
+                        <Col xl={9} lg={9} md={9}>
+                            <SliderHome data={this.state.SliderData}/>
                         </Col>
                     </Row>
                 </Container>

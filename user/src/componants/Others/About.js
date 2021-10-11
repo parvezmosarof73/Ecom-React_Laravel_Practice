@@ -27,7 +27,7 @@ class About extends Component {
         if (SiteInfoAbout==null) {
             axios.get(ApiURL.SendSiteInfo).then(response=> {
                 let  StatusCode=response.status;
-                if (StatusCode==200){
+                if (StatusCode===200){
                     let JSONData= (response.data)[0]['about'];
                     this.setState({about:JSONData,loaderDiv:"d-none",mainDiv:""});
                     sessionStorage.setItem("SiteInfoAbout",JSONData);

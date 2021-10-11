@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\CategoryDetailsController;
 use App\Http\Controllers\ContactListController;
+use App\Http\Controllers\ProductDetailsController;
 use App\Http\Controllers\ProductListController;
 use App\Http\Controllers\SiteInfoController;
+use App\Http\Controllers\SliderController;
 use App\Http\Controllers\VisitorListController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +17,6 @@ Route::get('/SendCategoryDetails',[CategoryDetailsController::class,'SendCategor
 Route::get('/ProductListByRemark/{remark}',[ProductListController::class,'ProductListByRemark']);
 Route::get('/ProductListByCategory/{Category}',[ProductListController::class,'ProductListByCategory']);
 Route::get('/ProductListBySubCategory/{Category}/{SubCategory}',[ProductListController::class,'ProductListBySubCategory']);
+Route::get('/SendSliderInfo',[SliderController::class,'SendSliderInfo']);
+
+Route::get('/ProductDetails/{code}',[ProductDetailsController::class,'ProductDetails']);

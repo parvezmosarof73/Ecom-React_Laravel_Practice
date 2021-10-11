@@ -1,8 +1,8 @@
 import React, {Component, Fragment} from 'react';
-import NavMenuDesktop from "../componants/common/NavMenuDesktop";
-import NavMenuMobile from "../componants/common/NavMenuMobile";
-import FooterMobile from "../componants/common/FooterMobile";
-import FooterDesktop from "../componants/common/FooterDesktop";
+import NavMenuDesktop from "../componants/Common/NavMenuDesktop";
+import NavMenuMobile from "../componants/Common/NavMenuMobile";
+import FooterMobile from "../componants/Common/FooterMobile";
+import FooterDesktop from "../componants/Common/FooterDesktop";
 import axios from "axios";
 import ApiURL from "../api/ApiURL";
 import {toast} from "react-toastify";
